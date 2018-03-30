@@ -30,6 +30,7 @@ use AliyunMNS\Responses\BatchDeleteMessageResponse;
 class Queue
 {
     private $queueName;
+    /** @var HttpClient */
     private $client;
 
     // boolean, whether the message body will be encoded in base64

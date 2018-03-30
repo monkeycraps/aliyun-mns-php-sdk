@@ -1,5 +1,7 @@
 <?php
 namespace GuzzleHttp\Promise;
+use App\Contracts\Components\JobLog\LogableJob;
+use App\Events\DebugEvent;
 
 /**
  * Promises/A+ implementation that avoids recursion when possible.
@@ -196,6 +198,11 @@ class Promise implements PromiseInterface
 
         try {
             if (isset($handler[$index])) {
+//                event(new DebugEvent());
+//                dd($value);
+//                dd($handler);
+//                dd($index);
+//                dd($handler[$index]);
                 $promise->resolve($handler[$index]($value));
             } elseif ($index === 1) {
                 // Forward resolution values as-is.

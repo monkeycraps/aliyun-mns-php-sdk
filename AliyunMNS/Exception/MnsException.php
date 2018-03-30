@@ -62,4 +62,3 @@ class MnsException extends \RuntimeException
     }
 }
 
-?>
